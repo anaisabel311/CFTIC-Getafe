@@ -1,0 +1,32 @@
+
+public class ArraysBidimensionales {
+
+	public static void main (String [] args) {
+		
+// Definir array Bidimensional, se pone doble []
+		
+		String [][] animales = new String [3][4]
+		
+//		System.out.println (animales[2][1]);
+//		animales [0][0] = "gato";
+		
+//		System.out.println (animales.length); // te da el número de filas
+//		System.out.println (animales[0].length); // te da número de filas que tiene la columna 0
+	
+		for (filas = 0; filas<animales.length; filas++) {
+			
+				for (int columnas=0 ; columnas<animales[filas].length; columnas++) {
+					animales[filas][columnas] = "*";
+				
+				}
+		}		
+		
+		for (filas = 0; filas<animales.length; filas++) {
+			
+			for (int columnas=0 ; columnas<animales[filas].length; columnas++) {
+				System.out.println (animales[filas][columnas]);
+		
+	}
+}
+}
+}
