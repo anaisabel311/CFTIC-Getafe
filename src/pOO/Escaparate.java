@@ -78,21 +78,24 @@ public class Escaparate {
 			System.out.println ("El escaparate "+ mensaje);	 
 		}	 
 
-
+	}
 
 		// MÉTODO MOSTRAR PRECIO MANIQUÍ
 
 
 	public void mostrarPrecio (Maniqui [] arrayEscaparate) {
 		
+			int precio = 0;
+			precio = arrayEscaparate [0].mani1.getVes().getPrecio() + arrayEscaparate [1].mani2.getPan().getPrecio()+ arrayEscaparate [1].mani2.getCami().getPrecio();
+			
+		}
 		
 		
 		
-	}	
 		
 
 	}
 
-}
+
 
 
