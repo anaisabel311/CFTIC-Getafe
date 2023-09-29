@@ -54,14 +54,15 @@ public class Escaparate {
 		
 		
 
-	}
+	} // main
 	public void  mostrarEscaparate (Maniqui [] arrayEscaparate) {	
 
 
 		String mensaje = "";
 
 		for (Maniqui ropa : arrayEscaparate) {
-
+			mensaje = "";
+			
 			if (ropa.getCami()!= null){
 				mensaje += ("Tiene una camisa, " + ropa.getCami().getColor() + ropa.getCami().getTalla());
 
@@ -85,16 +86,38 @@ public class Escaparate {
 
 	public void mostrarPrecio (Maniqui [] arrayEscaparate) {
 		
-			int precio = 0;
-			precio = arrayEscaparate [0].mani1.getVes().getPrecio() + arrayEscaparate [1].mani2.getPan().getPrecio()+ arrayEscaparate [1].mani2.getCami().getPrecio();
+		
+		double precioTotal= 0;
+		
+		for (Maniqui ropa : arrayEscaparate) {
 			
+			
+			
+			if (ropa.getCami()!= null){
+				precioTotal += ropa.getCami().getPrecio();
+
+			}
+			if (ropa.getPan() != null) {
+				precioTotal += ropa.getPan().getPrecio();
+
+			}
+			if (ropa.getVes() != null) {
+				precioTotal += ropa.getVes().getPrecio();
+				
+			}
+
+			 
+		}	
+		System.out.println ("El escaparate tiene un precio total de "+ precioTotal);	
 		}
+	}
+		
 		
 		
 		
 		
 
-	}
+	
 
 
 
