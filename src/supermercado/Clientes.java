@@ -1,5 +1,7 @@
 package supermercado;
 
+import java.util.Random;
+
 public class Clientes {
 
 	private String idCliente;
@@ -55,7 +57,7 @@ public class Clientes {
 	
 // MÉTODO LLENAR CARRITO
 	
-	public void añadirProducto (ProductosSupermercado producto, Clientes [] cliente) {
+	public void aniadirProducto (ProductosSupermercado producto) {
 	
 	if (getIdCliente() == "c1") {	
 		llenarCarrito (producto);
@@ -68,13 +70,36 @@ public class Clientes {
 	}
 	}	
 	
-		
+public void aniadirProducto (ProductosSupermercado ... producto) {
+	for  (ProductosSupermercado producto2 : producto) {
+			llenarCarrito(producto2);
+	}
+	
+}	
+	
+	
 public void llenarCarrito (ProductosSupermercado producto) {
 	
-	for (int i=0; i<this.carritoCompra.length; i++) {
-		this.carritoCompra [i] = producto;
+	for (int i=0; i<this.carritoCompra.length; i++){
+		ProductosSupermercado espacioProd = carritoCompra[i];
+			if (carritoCompra [i]==null) {
+				carritoCompra[i] = producto;
+				break;	
+			}
+		
 	}
+
 }
+
+// PAGA EL CLIENTE
+
+public void pagar (double importeAPagar) {
+	Random rd = new Random();
+	
+	if (rd.nextBoolean())
+		System.out.println ("El cliente "+);
+}
+
 }		
 	
 

@@ -73,17 +73,36 @@ public class SupermercadosPili {
 		Clientes cliente2 = new Clientes("c2", "Carmen",true );
 		Clientes cliente3 = new Clientes("c3", "Lola",false );
 //		Clientes clientes [] = {cliente1, cliente2, cliente3}; // METO LOS CLIENTES EN UN ARRAY
-		cliente1.añadirProducto(p6, this.clientes);
-		cliente1.añadirProducto(p3);
-		cliente1.añadirProducto(p4);
-		cliente2.añadirProducto(p4);
-		cliente2.añadirProducto(p2);
-		cliente3.añadirProducto(p1);
+		
+// AÑADIR PRODUCTO AL CLIENTE
+		
+		cliente1.aniadirProducto(p1);
+		cliente1.aniadirProducto(p2);
+		cliente1.aniadirProducto(p3);
+		
+		cliente2.aniadirProducto(p4);
+		cliente2.aniadirProducto(p2);
+		
+		cliente3.aniadirProducto(p1);
 		
 	// CREO LAS CAJERAS (2)	
 
 		Cajeras cajera1 = new Cajeras (1 , "Maribel");
+	//	cajera1.cobrar(cliente1);
+		double importeCompra = cajera1.cobrar(cliente1);
+// meter una excepcion por si falla la tarjeta de pago
+		try
+		
+		cliente1.pagar(importeCompra);
+		
 		Cajeras cajera2 = new Cajeras (2 , "Óscar");
+		double importeCompra2 = cajera2.cobrar(cliente2);
+		cliente2.pagar(importeCompra2);
+		
+		cajera2.cobrar(cliente3);
+		double importeCompra3 = cajera2.cobrar(cliente3);
+		cliente3.pagar(importeCompra3);
+		
 		Cajeras cajeras [] = {cajera1, cajera2}; // METO LAS CAJERAS EN UN ARRAY, ASÍ SE HA DECLARADO.
 		
 	// MOSTRAR LOS PRODUCTOS DEL SUPERMERCADO

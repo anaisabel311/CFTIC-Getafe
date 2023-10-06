@@ -8,7 +8,7 @@ public class Cajeras {
 // CONSTRUCTOR	
 	
 	public Cajeras(int idCajera, String nombreCajera) {
-		super();
+		super(); // LLAMA AL CONSTRUCTOR PADRE.
 		this.idCajera = idCajera;
 		this.nombreCajera = nombreCajera;
 	}
@@ -30,6 +30,39 @@ public class Cajeras {
 	public void setNombreCajera(String nombreCajera) {
 		this.nombreCajera = nombreCajera;
 	}
+
+// SOBREESCRIBIR UN MÉTODO
+	@Override // se realiza con SOURCE - GENERATE toString()...
+	public String toString() {
+		return "Cajeras [idCajera=" + idCajera + ", nombreCajera=" + nombreCajera + "]";
+	}
 	
+
+// SOBREESCRIBIR UN MÉTODO PADRE
 	
+// 1º LO DECLARO COMO ESTÁ EN EL MÉTODO PADRE
+//	@Override 		// sobreescribiendo un método de clase PADRE.
+//	public String toString() {
+//		return idCajera + " " + nombreCajera;
+//	}
+
+	
+// METODO COBRAR
+	
+	public double cobrar (Clientes cliente) {
+		// mira el carrito y da el precio de la compra
+		double importe = 0;
+		
+		for (ProductosSupermercado p : cliente.getCarritoCompra()) {
+			importe+= p.getPrecioProducto();
+		}
+
+		// if ternario
+		return cliente.isVip()? importe*0.85 : importe;
+	}
+
+
+
 }
+
+
