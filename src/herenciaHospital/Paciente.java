@@ -26,8 +26,11 @@ public String [] getSintomas() {
 
 // MÉTODO COMER
 	
+	
+	
 public void comer () {
 	
-}
+	System.out.println ("EL PACIENTE "+ this.getNomPersona() + " ESTÁ COMIENDO EN LA CAFETERÍA DEL HOSPITAL");
+}	
 	
 }

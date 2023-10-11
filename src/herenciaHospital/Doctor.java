@@ -1,5 +1,7 @@
 package herenciaHospital;
 
+import java.util.Random;
+
 public class Doctor extends EmpleadosHospital{
 	
 	private String especialidad;
@@ -28,14 +30,36 @@ public class Doctor extends EmpleadosHospital{
 	
 // METODO DIAGNOSTICAR PACIENTE
 	
-	public void diagnosticarPaciente () {}
-	
+	public Enfermo diagnosticarPaciente (Paciente paciente) {
+		Random r=new Random();
+		int numAleatorio = r.nextInt(1,10);
+
+
+		System.out.println("El número aleatoria es: "+ numAleatorio);
+
+		if(numAleatorio>= 2) {
+			System.out.println("El paciente " + paciente.getNomPersona()+ " está enfermo");
+			Enfermo enfermo = new Enfermo (paciente.getIdPersona(), paciente.getNomPersona()+ paciente.getEdad());
+
+			return enfermo;
+		} else {
+			System.out.println("El paciente " + paciente.getNomPersona() + " no está enfermo");
+			return null;
+		}
+
+
+
+
+	}
+
 	
 	
 	
 	
 // METODO COMER
 	
-	public void comer() {}
+	public void comer() {
+		System.out.println("EL TRABAJADOR CON ID "+ this.getIdPersona() + "\n" +"NOMBRE TRABAJADOR "+ this.getNomPersona()+ "\n" + "ESTÁ COMIENDO EN EL BUFFET DEL HOSPITAL");
+	}
 	
 }

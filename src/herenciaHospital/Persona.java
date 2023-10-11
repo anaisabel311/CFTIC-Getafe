@@ -45,7 +45,11 @@ public void setEdad(int edad) {
 
 //MÉTODO COMER 
 
-public abstract void comer(); 
+public abstract void comer();
 
 }
+
+
+
+	
 

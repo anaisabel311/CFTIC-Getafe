@@ -25,7 +25,10 @@ public class Enfermo extends Persona {
 	
 // MÉTODO COMER
 	
-	public void comer () {}
+	public void comer () {
+		
+		System.out.println ("EL ENFERMO "+ this.getNomPersona() + " ESTÁ COMIENDO EN SU HABITACIÓN");
+	}
 	
 
 }
