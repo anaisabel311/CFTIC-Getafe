@@ -10,7 +10,8 @@ import mapas.Alumno;
 public class Biblioteca {
 	
 	private String nomBiblio;
-	private Map <String, Libro> catalogoLibro = new HashMap<String, Libro>();
+//  private Map <String, Libro> catalogoLibro;  -> guarda 2 tipos de datos, la clave y el valor.	
+	private Map <String, Libro> catalogoLibro = new HashMap<String, Libro>(); // se puede meter en el constructor
 	
 // CONSTRUCTOR	
 	
@@ -20,6 +21,8 @@ public class Biblioteca {
 		this.catalogoLibro = catalogoLibro;
 	}	
 
+	
+	
 // GETTERS AND SETTERS	
 	
 	public String getNomBiblio() {
