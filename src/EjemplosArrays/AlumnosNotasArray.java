@@ -2,7 +2,15 @@ package EjemplosArrays;
 
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import DDBB.ConexionBaseDeDatos;
+
 public class AlumnosNotasArray {
+	
+	private static final Logger Logger = LogManager.getLogger(AlumnosNotasArray.class);
+	
 	public static void main(String[] args) {
 		
 		String [] alumnosNotas = {"Alumno1:9", "Alumno2:8", "Alumno3:3", "Alumno4:4", "Alumno5:5", "Alumno6:10", "Alumno7:4"};
@@ -42,6 +50,7 @@ public class AlumnosNotasArray {
 				String nota = dato.substring(dosPuntos+1);
 				int notas = Integer.parseInt(nota);		
 				if (notas >=5) {
+					Logger.info("EL ALUMNO ESTÁ APROBADO");
 					alumnosAprobados [aprobados] = nombre;
 					aprobados ++;
 				}	

@@ -10,8 +10,11 @@ import java.sql.Statement;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+
 public class ConexionBaseDeDatos {
 	
+private static final Logger Logger = LogManager.getLogger(ConexionBaseDeDatos.class);
 	
 	public static void main(String[] args) {
 		ConexionBaseDeDatos conexion = new ConexionBaseDeDatos();
