@@ -30,6 +30,20 @@ public class Alumno {
 		}
 	}
 	
+		
+	public Alumno(String dni, String nombre, String apellidos, String nta, String va) {
+		super();
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.nota = nta;
+		this.vip = va;
+	}
+
+	public Alumno(StringBuilder sb) {
+		// TODO Auto-generated constructor stub
+	}
+
 	//GETTER Y SETTER
 	public String getDni() {
 		return dni;
