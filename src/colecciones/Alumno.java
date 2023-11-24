@@ -31,13 +31,13 @@ public class Alumno {
 	}
 	
 		
-	public Alumno(String dni, String nombre, String apellidos, String nta, String va) {
+	public Alumno(String dni, String nombre, String apellidos, double nta, boolean isVip) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.nota = nta;
-		this.vip = va;
+		this.vip = isVip;
 	}
 
 	public Alumno(StringBuilder sb) {
