@@ -12,7 +12,7 @@ import jakarta.persistence.Transient;
 @Table(name="TB_CLIENTES")
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ //   @GeneratedValue(strategy = GenerationType.IDENTITY)// lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.
     private Long id;
 
     @Column(name="nombre_cliente", length = 30 , nullable = false )
@@ -36,7 +36,7 @@ public class Cliente {
         this.formaPago = formaPago;
     }
     
-    public Cliente(Long id, String nombre, String apellido, String formaPago) {
+    public Cliente(long id, String nombre, String apellido, String formaPago) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

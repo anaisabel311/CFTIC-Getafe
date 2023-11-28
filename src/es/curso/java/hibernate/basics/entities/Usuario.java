@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Usuario {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENTAL PK
+//	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENTAL PK //lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.
 	private Long id;
 	
 	@Column (length = 20, name = "NOMBRE_USUARIO")

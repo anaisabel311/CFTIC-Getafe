@@ -15,8 +15,8 @@ public class HibernateListar {
     public static void main(String[] args) {
     	logger.debug("Empezando");
         EntityManager em = JpaUtil.getEntityManager();
-        Cliente cliente1 = new Cliente("Nombre1","Apellido","Efectivo");
-        Cliente cliente2 = new Cliente("Nombre2","Apellido2","Tarjeta");
+        Cliente cliente1 = new Cliente(1,"Nombre1","Apellido","Efectivo");
+        Cliente cliente2 = new Cliente(2,"Nombre2","Apellido2","Tarjeta");
         em.getTransaction().begin();
         em.persist(cliente1);
         em.persist(cliente2);

@@ -22,7 +22,7 @@ public class HibernateListarUsuario {
     	logger.debug("Empezando");
         EntityManager em = JpaUtil.getEntityManager();
               
-        Usuario usuario1 = new Usuario ("Nombre1","Apellido","DNI1", "24/11/23");
+        Usuario usuario1 = new Usuario ("Nombre1","Apellido","DNI1","24/11/23");
         Usuario usuario2 = new Usuario ("Nombre2","Apellido2","DNI2","23/11/23");
         Usuario usuario3 = new Usuario ("Nombre3","Apellido2","DNI3","22/11/23");
         
@@ -33,7 +33,7 @@ public class HibernateListarUsuario {
         em.getTransaction().commit();
         
         List<Usuario> usuarios = em.createQuery("from Usuario", Usuario.class).getResultList();
-        usuarios.forEach(System.out::println);//Método Referencia
+        usuarios.forEach(System.out::println);  //Método Referencia
         em.close();
         logger.debug("Final");
     }
