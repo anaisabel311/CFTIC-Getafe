@@ -14,9 +14,9 @@ public class HibernateListar {
 	private static final Logger logger = LogManager.getLogger(HibernateListar.class);
     public static void main(String[] args) {
     	logger.debug("Empezando");
-        EntityManager em = JpaUtil.getEntityManager();
-        Cliente cliente1 = new Cliente(1,"Nombre1","Apellido","Efectivo");
-        Cliente cliente2 = new Cliente(2,"Nombre2","Apellido2","Tarjeta");
+        EntityManager em = JpaUtil.getEntityManager(); // hace la conexión con la base de Datos que le pasamos, nombre del persistence Unit.
+        Cliente cliente1 = new Cliente("Nombre1","Apellido","Efectivo");
+        Cliente cliente2 = new Cliente("Nombre2","Apellido2","Tarjeta");
         em.getTransaction().begin();
         em.persist(cliente1);
         em.persist(cliente2);

@@ -12,8 +12,9 @@ import jakarta.persistence.Transient;
 @Table(name="TB_CLIENTES")
 public class Cliente {
     @Id
- //   @GeneratedValue(strategy = GenerationType.IDENTITY)// lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.
-    private Long id;
+ //   @GeneratedValue(strategy = GenerationType.IDENTITY)// lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.Utiliza Secuencias.
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // EN ORACLE UTILIZA SECUENCIAS
+    private long id;
 
     @Column(name="nombre_cliente", length = 30 , nullable = false )
     private String nombre;
@@ -43,11 +44,11 @@ public class Cliente {
         this.formaPago = formaPago;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

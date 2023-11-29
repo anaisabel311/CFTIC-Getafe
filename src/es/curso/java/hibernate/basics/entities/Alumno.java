@@ -12,8 +12,9 @@ import jakarta.persistence.Transient;
 @Table(name = "TB_ALUMNO")
 public class Alumno {
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)// lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.
-	private Long id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)// lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.Utiliza Secuencias
+	@GeneratedValue(strategy = GenerationType.SEQUENCE) // EN ORACLE UTILIZA SECUENCIAS
+	private long id;
 	
 	private String nombre;
 	private String apellidos;
@@ -21,7 +22,7 @@ public class Alumno {
 	@Column(length = 9, name = "DNI_ALUMNO", unique = true)
 	private String dni;
 	
-	private String user;
+	private String usuario;
 	
 	@Transient
 	private int edad;
@@ -30,13 +31,13 @@ public class Alumno {
 		super();
 	}
 
-	public Alumno(Long id, String nombre, String apellidos, String dni, String user, int edad) {
+	public Alumno(long id, String nombre, String apellidos, String dni, String user, int edad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = user;
 		this.edad = edad;
 	}
 
@@ -46,16 +47,16 @@ public class Alumno {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = user;
 	}
 
-	public Alumno(Long id, String nombre, String apellidos, String dni, String user) {
+	public Alumno(long id, String nombre, String apellidos, String dni, String user) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = user;
 	}
 
 	public String getNombre() {
@@ -82,18 +83,18 @@ public class Alumno {
 	}
 
 	public String getUser() {
-		return user;
+		return usuario;
 	}
 	public void setUser(String user) {
-		this.user = user;
+		this.usuario = user;
 	}
 
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -108,7 +109,7 @@ public class Alumno {
 	@Override
 	public String toString() {
 		return "Alumno [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", user="
-				+ user + "]";
+				+ usuario + "]";
 	}
 	
 }

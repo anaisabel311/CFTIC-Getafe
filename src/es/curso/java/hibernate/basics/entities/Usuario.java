@@ -14,8 +14,9 @@ import jakarta.persistence.Table;
 public class Usuario {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENTAL PK //lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas.
-	private Long id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENTAL PK //lo comento porque con ORACLE version XE, me da error el auto-incremental a la hora de crear las tablas. Utiliza secuencias.
+	@GeneratedValue(strategy = GenerationType.SEQUENCE) // EN ORACLE SON SECUENCIAS.
+	private long id;
 	
 	@Column (length = 20, name = "NOMBRE_USUARIO")
 	private String nombre;
@@ -30,6 +31,14 @@ public class Usuario {
 
 	
 // CONSTRUCTOR	
+	
+
+	public Usuario() {
+		super();
+	}
+	
+	
+	
 	public Usuario(String nombre, String apellidos, String dni, String fechaAlta) {
 		super();
 
@@ -43,9 +52,6 @@ public class Usuario {
 	
 
 
-	public Usuario() {
-		super();
-	}
 
 
 
@@ -53,12 +59,12 @@ public class Usuario {
 
 // GETTERS AND SETTERS	
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
