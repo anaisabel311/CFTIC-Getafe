@@ -1,5 +1,7 @@
 package es.curso.java.hibernate.basics.entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,7 @@ public class Usuario {
 	@Column (length = 10, name = "DNI_USUARIO", unique = true)
 	private String dni;
 	
-	private String fechaAlta;
+	private Date fechaAlta;
 
 	
 // CONSTRUCTOR	
@@ -39,7 +41,7 @@ public class Usuario {
 	
 	
 	
-	public Usuario(String nombre, String apellidos, String dni, String fechaAlta) {
+	public Usuario(String nombre, String apellidos, String dni, Date fechaAlta) {
 		super();
 
 		this.nombre = nombre;
@@ -105,12 +107,12 @@ public class Usuario {
 	}
 
 
-	public String getFechaAlta() {
+	public Date getFechaAlta() {
 		return fechaAlta;
 	}
 
 
-	public void setFechaAlta(String fechaAlta) {
+	public void setFechaAlta(Date fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
 

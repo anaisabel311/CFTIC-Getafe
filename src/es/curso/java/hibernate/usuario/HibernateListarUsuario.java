@@ -1,5 +1,6 @@
 package es.curso.java.hibernate.usuario;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -22,9 +23,9 @@ public class HibernateListarUsuario {
     	logger.debug("Empezando");
         EntityManager em = JpaUtil.getEM("hibernateOracle");
               
-        Usuario usuario1 = new Usuario ("Nombre1","Apellido","DNI1","24/11/23");
-        Usuario usuario2 = new Usuario ("Nombre2","Apellido2","DNI2","23/11/23");
-        Usuario usuario3 = new Usuario ("Nombre3","Apellido2","DNI3","22/11/23");
+        Usuario usuario1 = new Usuario ("Nombre1","Apellido","DNI1",new Date());
+        Usuario usuario2 = new Usuario ("Nombre2","Apellido2","DNI2",new Date());
+        Usuario usuario3 = new Usuario ("Nombre3","Apellido2","DNI3",new Date());
         
         em.getTransaction().begin();
         em.persist(usuario1);
