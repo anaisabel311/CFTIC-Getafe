@@ -20,7 +20,7 @@ public class HibernateListarUsuario {
 	private static final Logger logger = LogManager.getLogger(HibernateListarUsuario.class);
     public static void main(String[] args) {
     	logger.debug("Empezando");
-        EntityManager em = JpaUtil.getEntityManager();
+        EntityManager em = JpaUtil.getEM("hibernateOracle");
               
         Usuario usuario1 = new Usuario ("Nombre1","Apellido","DNI1","24/11/23");
         Usuario usuario2 = new Usuario ("Nombre2","Apellido2","DNI2","23/11/23");

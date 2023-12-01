@@ -33,7 +33,7 @@ public class Usuario {
 // CONSTRUCTOR	
 	
 
-	public Usuario() {
+	public Usuario(String dni2, String nombre2, String apellidos2, double nota) {
 		super();
 	}
 	
@@ -48,7 +48,11 @@ public class Usuario {
 		this.fechaAlta = fechaAlta;
 	}
 
-	
+	public Usuario() {
+		super();
+	}
+
+
 	
 
 
@@ -59,6 +63,8 @@ public class Usuario {
 
 // GETTERS AND SETTERS	
 	
+
+
 	public long getId() {
 		return id;
 	}
