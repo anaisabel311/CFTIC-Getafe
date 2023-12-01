@@ -29,6 +29,9 @@ public class HibernateListadoUsuarios {
 	static EntityManager em = JpaUtil.getEM("hibernateOracle");
 
 	public static void main(String[] args) {
+		
+// hola
+		
 
 //        List<Usuario> usuarios = em.createQuery("from Usuario", Usuario.class).getResultList();
 //        
