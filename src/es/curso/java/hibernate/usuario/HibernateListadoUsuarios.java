@@ -140,7 +140,7 @@ public class HibernateListadoUsuarios {
 	public List<Productos> consultaporFecha(String fechaConsulta) {
 		List<Productos> productos;
 
-		Query query = em.createQuery("from Productos p where p.fecha>=?1", Productos.class);
+		Query query = em.createQuery("from Productos p where p.fecha=?1", Productos.class);
 		logger.info("consulta hecha");
 
 		query.setParameter(1, fechaConsulta);
@@ -153,7 +153,7 @@ public class HibernateListadoUsuarios {
 		List<Object[]> productos;
 
 		Query query = em.createQuery(
-				"SELECT po.tipo, AVG(precio) AS media_precio, SUM(unidades) AS suma_total from Productos po GROUP BY po.tipo");
+				"SELECT po.tipo, ROUND (AVG(precio),2) AS media_precio, SUM(unidades) AS suma_total from Productos po GROUP BY po.tipo");
 		logger.info("consulta hecha");
 
 		productos = query.getResultList();
