@@ -47,6 +47,8 @@ public class DatosUsuarios {
 	private Date fecha;
 	@Column (length = 1, name = "SEXO_USUARIO")
 	private String sexo;
+	@Column (length = 9, name = "DNI_USUARIO")
+	private String dni;
 	
 // CONSTRUCTORES
 	
@@ -56,7 +58,7 @@ public class DatosUsuarios {
 	
 	
 	public DatosUsuarios(long id, String nombre, String apellidos, String password, String email, int telefono,
-			Date fecha, String sexo) {
+			Date fecha, String sexo, String dni) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -66,6 +68,7 @@ public class DatosUsuarios {
 		this.telefono = telefono;
 		this.fecha = fecha;
 		this.sexo = sexo;
+		this.dni = dni;
 	}
 
 	
@@ -150,12 +153,20 @@ public class DatosUsuarios {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 
 
 	@Override
 	public String toString() {
 		return "DatosUsuarios [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", password=" + password
-				+ ", email=" + email + ", telefono=" + telefono + ", fecha=" + fecha + ", sexo=" + sexo + "]";
+				+ ", email=" + email + ", telefono=" + telefono + ", fecha=" + fecha + ", sexo=" + sexo + ", dni=" + dni +"]";
 	}
 	
 	
